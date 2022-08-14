@@ -1,0 +1,5 @@
+@import 'abstracts/mixins', 'abstracts/variables', 'abstracts/map';
+@import 'base/normalize.scss';
+@import 'composents/card', 'composents/slide';
+@import 'layout/slideGroup'; 
+@import 'pages/accueil', 'pages/saison', 'pages/personnages'; 

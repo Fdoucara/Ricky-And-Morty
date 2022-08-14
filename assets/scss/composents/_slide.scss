@@ -1,0 +1,22 @@
+.slide_body {
+  @include slide_body;
+  @include center-element;
+  &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+    @include hidden-element;
+    width: 0%;
+    left: 100%
+  }
+}
+
+.slide_photo {
+  @include slide_photo;
+  grid-row: 2 / 3;
+  transition: transform 0.3s ease;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  img {
+    width: 100px;
+  }
+};
