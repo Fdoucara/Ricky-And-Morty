@@ -2,7 +2,7 @@
   <v-container class="mx-0">
     <v-layout row wrap>
       <v-card
-        class="mx-auto my-4"
+        class="mx-auto my-5"
         max-width="450"
         v-for="(episode, index) in saison"
         :key="index"

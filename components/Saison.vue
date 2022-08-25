@@ -1,7 +1,7 @@
 <template>
   <v-container class="mt-9">
     <v-layout row justify-space-between class="mx-auto mb-6">
-      <v-flex lg2>
+      <v-flex xs4 sm4 md4 lg2>
         <div class="d-flex justify-center">
           <img
             src="../assets/images/leftGun.png"
@@ -10,7 +10,7 @@
           />
         </div>
       </v-flex>
-      <v-flex class="d-flex justify-center" lg8>
+      <v-flex class="d-flex justify-center" xs4 sm4 md4 lg8>
         <div
           class="slide_body"
           v-for="(saison, index) in allEpTab"
@@ -19,7 +19,7 @@
           <h2 class="slide_body_title">Saison {{ index + 1 }}</h2>
         </div>
       </v-flex>
-      <v-flex lg2>
+      <v-flex xs4 sm4 md4 lg2>
         <div class="d-flex justify-center">
           <img
             src="../assets/images/rightGun.png"
