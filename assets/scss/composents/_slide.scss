@@ -9,14 +9,9 @@
 }
 
 .slide_photo {
-  @include slide_photo;
-  grid-row: 2 / 3;
   transition: transform 0.3s ease;
   &:hover {
     cursor: pointer;
     transform: scale(1.2);
-  }
-  img {
-    width: 100px;
   }
 };

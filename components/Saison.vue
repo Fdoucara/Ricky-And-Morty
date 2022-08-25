@@ -1,8 +1,16 @@
 <template>
-  <div>
-    <div class="container_saison">
-      <img src="../assets/images/leftGun.png" class="slide_photo" @click="saisonLeft">
-      <div class="slide">
+  <v-container class="mt-9">
+    <v-layout row justify-space-between class="mx-auto mb-6">
+      <v-flex lg2>
+        <div class="d-flex justify-center">
+          <img
+            src="../assets/images/leftGun.png"
+            width="70px"
+            @click="saisonLeft"
+          />
+        </div>
+      </v-flex>
+      <v-flex class="d-flex justify-center" lg8>
         <div
           class="slide_body"
           v-for="(saison, index) in allEpTab"
@@ -10,16 +18,24 @@
         >
           <h2 class="slide_body_title">Saison {{ index + 1 }}</h2>
         </div>
-      </div>
-      <img src="../assets/images/rightGun.png" class="slide_photo" @click="saisonRight">
-    </div>
+      </v-flex>
+      <v-flex lg2>
+        <div class="d-flex justify-center">
+          <img
+            src="../assets/images/rightGun.png"
+            width="70px"
+            @click="saisonRight"
+          />
+        </div>
+      </v-flex>
+    </v-layout>
 
     <div class="container_episode">
-      <div class="episode" v-for="(saison, index) in allEpTab" :key="index">
+      <div class="episode d-flex justify-center" v-for="(saison, index) in allEpTab" :key="index">
         <Episode :saison="saison" />
       </div>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -78,12 +94,17 @@ export default {
 
       this.tlL.to(allslide[this.index], {
         width: "0%",
+        x: 0,
         left: "100%",
         autoAlpha: 0,
         duration: 0.7,
         ease: "power2",
       });
-      this.tlL.to(allEpisodeGroup[this.newIndex], { x: "0%", duration: 1 }, '-=0.75');
+      this.tlL.to(
+        allEpisodeGroup[this.newIndex],
+        { x: "0%", duration: 1 },
+        "-=0.75"
+      );
       this.tlL.to(
         allEpisodeGroup[this.index],
         {
@@ -101,15 +122,19 @@ export default {
 
       this.tlR = gsap.timeline();
 
-      this.tlR
-      .to(allslide[this.index], {
-        width: "100%",
+      this.tlR.to(allslide[this.index], {
+        width: "50%",
         left: "0%",
+        x: '50%',
         autoAlpha: 1,
         duration: 0.7,
         ease: "power2",
       });
-      this.tlR.to(allEpisodeGroup[this.newIndex], { x: "-100%", duration: 1 }, '-=0.75');
+      this.tlR.to(
+        allEpisodeGroup[this.newIndex],
+        { x: "-100%", duration: 1 },
+        "-=0.75"
+      );
       this.tlR.to(
         allEpisodeGroup[this.index],
         {
@@ -135,10 +160,10 @@ export default {
 
           gsap.to(allslide[this.index], {
             keyframes: [
-              { duration: 0.1, x: 4 },
-              { duration: 0.1, x: -4 },
-              { duration: 0.1, x: 4 },
-              { duration: 0.1, x: 0 },
+              { duration: 0.1, x: "51%" },
+              { duration: 0.1, x: "49%" },
+              { duration: 0.1, x: "51%" },
+              { duration: 0.1, x: "50%" },
             ],
           });
 

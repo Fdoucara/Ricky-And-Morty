@@ -13,9 +13,11 @@
   -webkit-text-size-adjust: 100%; /* 2 */
   height: 100%;
   overflow-x: hidden;
-  background: black;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, black, #45B649);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right,  black, #45B649); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+html::-webkit-scrollbar { 
+  /* This is the magic bit */
+  display: none;
 }
 
 /* Sections

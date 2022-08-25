@@ -1,29 +1,8 @@
-.container_saison {
-  display: grid;
-  grid-template-columns: 20% 1fr 20%;
-  grid-template-rows: repeat(3, 1fr);
-}
-
-.container_episode {
-  position: relative;
-  padding-top: 20px;
-}
-
 .episode {
   @include episode_container;
   transform: translateX(0);
   &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
     left: 100%;
     display: none;
-  }
-
-  &_card_container {
-    width: 80%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, fr);
-    row-gap: 70px;
-    margin-bottom: 20px;
   }
 }
