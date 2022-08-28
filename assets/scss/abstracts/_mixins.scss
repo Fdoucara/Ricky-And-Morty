@@ -1,12 +1,9 @@
-@mixin slide_body {
-  position: absolute;
+@mixin saison_btn {
   font-family: $font-titre;
-  width: 40%;
   margin: auto;
+  width: 10%;
   height: 50px;
-  background: black;
-  border-radius: 25px;
-  color: white;
+  color: black;
 }
 
 @mixin episode_container {

@@ -1,0 +1,38 @@
+.container_episode_item_container_card {
+  position: relative;
+  width: 20%;
+  margin: 25px 25px;
+  border-radius: 15px;
+  box-shadow: -1px -1px 15px $troisieme-couleur;
+  transition: transform 0.3s ease-in;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  &_image {
+    width: 100%;
+
+    img {
+      object-fit: contain;
+      border-radius: 15px 15px 0px 0px;
+      width: 100%;
+    }
+  }
+
+  &_body {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      margin: 0;
+      font-family: $font-titre;
+      &:nth-child(2) {
+        color: $troisieme-couleur;
+      }
+    }
+  }
+}

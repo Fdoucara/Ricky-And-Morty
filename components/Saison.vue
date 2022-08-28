@@ -1,41 +1,21 @@
 <template>
-  <v-container class="mt-9">
-    <v-layout row justify-space-between class="mx-auto mb-6">
-      <v-flex xs4 sm4 md4 lg2>
-        <div class="d-flex justify-center">
-          <img
-            src="../assets/images/leftGun.png"
-            width="70px"
-            @click="saisonLeft"
-          />
-        </div>
-      </v-flex>
-      <v-flex class="d-flex justify-center" xs4 sm4 md4 lg8>
-        <div
-          class="slide_body"
-          v-for="(saison, index) in allEpTab"
-          :key="index"
-        >
-          <h2 class="slide_body_title">Saison {{ index + 1 }}</h2>
-        </div>
-      </v-flex>
-      <v-flex xs4 sm4 md4 lg2>
-        <div class="d-flex justify-center">
-          <img
-            src="../assets/images/rightGun.png"
-            width="70px"
-            @click="saisonRight"
-          />
-        </div>
-      </v-flex>
-    </v-layout>
+  <div class="saison">
+    <div class="saison_btn" >
+      <div class="saison_btn_item" v-for="(saison, index) in allEpTab" :key="index">
+        <h3 class="saison_btn_item_title" :id="index" @click="showIndex">Saison {{ index + 1 }}</h3>
+      </div>
+    </div>
 
     <div class="container_episode">
-      <div class="episode d-flex justify-center" v-for="(saison, index) in allEpTab" :key="index">
+      <div
+        class="container_episode_item"
+        v-for="(saison, index) in allEpTab"
+        :key="index"
+      >
         <Episode :saison="saison" />
       </div>
     </div>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -50,10 +30,7 @@ export default {
       tabEpisodeS3: [],
       tabEpisodeS4: [],
       tabEpisodeS5: [],
-      tlL: null,
-      tlR: null,
-      index: 0,
-      newIndex: 0,
+      index: null,
     };
   },
   methods: {
@@ -86,129 +63,10 @@ export default {
         this.tabEpisodeS5
       );
     },
-    clickLeft() {
-      let allslide = gsap.utils.toArray(".slide_body");
-      let allEpisodeGroup = gsap.utils.toArray(".episode");
-
-      this.tlL = gsap.timeline();
-
-      this.tlL.to(allslide[this.index], {
-        width: "0%",
-        x: 0,
-        left: "100%",
-        autoAlpha: 0,
-        duration: 0.7,
-        ease: "power2",
-      });
-      this.tlL.to(
-        allEpisodeGroup[this.newIndex],
-        { x: "0%", duration: 1 },
-        "-=0.75"
-      );
-      this.tlL.to(
-        allEpisodeGroup[this.index],
-        {
-          display: "none",
-          left: "100%",
-          duration: 1,
-          ease: "power2",
-        },
-        "-=0.90"
-      );
-    },
-    clickRight() {
-      let allslide = gsap.utils.toArray(".slide_body");
-      let allEpisodeGroup = gsap.utils.toArray(".episode");
-
-      this.tlR = gsap.timeline();
-
-      this.tlR.to(allslide[this.index], {
-        width: "50%",
-        left: "0%",
-        x: '50%',
-        autoAlpha: 1,
-        duration: 0.7,
-        ease: "power2",
-      });
-      this.tlR.to(
-        allEpisodeGroup[this.newIndex],
-        { x: "-100%", duration: 1 },
-        "-=0.75"
-      );
-      this.tlR.to(
-        allEpisodeGroup[this.index],
-        {
-          display: "block",
-          left: "0%",
-          duration: 1,
-          ease: "power2",
-        },
-        "-=0.90"
-      );
-    },
-    saisonLeft() {
-      this.handleDirection("prev");
-    },
-    saisonRight() {
-      this.handleDirection("next");
-    },
-    handleDirection(direction) {
-      if (direction === "next") {
-        if (this.index === 4 && this.newIndex === 4) {
-          let allslide = gsap.utils.toArray(".slide_body");
-          let allEpisodeGroup = gsap.utils.toArray(".episode");
-
-          gsap.to(allslide[this.index], {
-            keyframes: [
-              { duration: 0.1, x: "51%" },
-              { duration: 0.1, x: "49%" },
-              { duration: 0.1, x: "51%" },
-              { duration: 0.1, x: "50%" },
-            ],
-          });
-
-          gsap.to(allEpisodeGroup[this.index], {
-            keyframes: [
-              { duration: 0.1, x: 4, rotate: 2 },
-              { duration: 0.1, x: -4, rotate: -2 },
-              { duration: 0.1, x: 4, rotate: 2 },
-              { duration: 0.1, x: 0, rotate: 0 },
-            ],
-          });
-          return;
-        }
-        this.index++;
-        this.clickRight();
-        this.newIndex++;
-      } else if (direction === "prev") {
-        if (this.index === 0 && this.newIndex === 0) {
-          let allslide = gsap.utils.toArray(".slide_body");
-          let allEpisodeGroup = gsap.utils.toArray(".episode");
-
-          gsap.to(allslide[this.index], {
-            keyframes: [
-              { duration: 0.1, x: -4 },
-              { duration: 0.1, x: 4 },
-              { duration: 0.1, x: -4 },
-              { duration: 0.1, x: 0 },
-            ],
-          });
-
-          gsap.to(allEpisodeGroup[this.newIndex], {
-            keyframes: [
-              { duration: 0.1, x: -4, rotate: -2 },
-              { duration: 0.1, x: 4, rotate: 2 },
-              { duration: 0.1, x: -4, rotate: -2 },
-              { duration: 0.1, x: 0, rotate: 0 },
-            ],
-          });
-          return;
-        }
-        this.newIndex--;
-        this.clickLeft();
-        this.index--;
-      }
-    },
+    showIndex(e) {
+      this.index = e.target.id;
+      console.log(this.index);
+    }
   },
   mounted() {
     this.allEpisodes();

@@ -1,4 +1,4 @@
 @import 'abstracts/mixins', 'abstracts/variables';
 @import 'base/normalize.scss';
-@import 'composents/slide';
-@import 'pages/saison'; 
+@import 'composents/card', 'composents/button';
+@import 'pages/saison', 'pages/episode'; 
