@@ -8,6 +8,7 @@
       <div class="container_episode_item_container_card_image">
         <img
           src="https://tse1.mm.bing.net/th?id=OIP.M9bPDxpA_344QDwcOa-uRgHaEK&pid=Api&P=0"
+          alt="Rick et Morty"
         />
       </div>
 

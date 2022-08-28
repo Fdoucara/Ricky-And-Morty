@@ -1,9 +1,9 @@
 .container_episode_item_container_card {
   position: relative;
   width: 20%;
-  margin: 25px 25px;
+  margin: 25px 35px;
   border-radius: 15px;
-  box-shadow: -1px -1px 15px $troisieme-couleur;
+  box-shadow: -1px -1px 15px white;
   transition: transform 0.3s ease-in;
 
   &:hover {
@@ -22,7 +22,9 @@
   }
 
   &_body {
+    background-color: white;
     padding: 20px;
+    border-radius: 0px 0px 15px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,7 +33,7 @@
       margin: 0;
       font-family: $font-titre;
       &:nth-child(2) {
-        color: $troisieme-couleur;
+        color: $quatrieme-couleur;
       }
     }
   }
