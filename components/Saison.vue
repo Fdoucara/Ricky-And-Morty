@@ -12,7 +12,7 @@
         v-for="(saison, index) in allEpTab"
         :key="index"
       >
-        <Episode :saison="saison" />
+        <Episode :saison="saison" :index="id" />
       </div>
     </div>
   </div>
@@ -22,6 +22,7 @@
 import Episode from "./Episode.vue";
 export default {
   name: "Saison",
+  components: { Episode },
   data() {
     return {
       allEpTab: [],
@@ -30,7 +31,7 @@ export default {
       tabEpisodeS3: [],
       tabEpisodeS4: [],
       tabEpisodeS5: [],
-      index: null,
+      id: 0,
     };
   },
   methods: {
@@ -64,13 +65,12 @@ export default {
       );
     },
     showIndex(e) {
-      this.index = e.target.id;
+      this.id = e.target.id;
       console.log(this.index);
     }
   },
   mounted() {
     this.allEpisodes();
-  },
-  components: { Episode },
+  }
 };
 </script>

@@ -7,7 +7,7 @@
     >
       <div class="container_episode_item_container_card_image">
         <img
-          src="https://tse1.mm.bing.net/th?id=OIP.M9bPDxpA_344QDwcOa-uRgHaEK&pid=Api&P=0"
+          :src="card_image[index]"
           alt="Rick et Morty"
         />
       </div>
@@ -23,9 +23,32 @@
 <script>
 export default {
   name: "Episode",
-  props: ["saison"],
+  props: ["saison", "index"],
   data() {
-    return {};
+    return {
+      card_image: [
+        'https://tse2.mm.bing.net/th?id=OIP.AtO8nvarM_zTBDYuUwTWKwHaEK&pid=Api&P=0',
+        'https://tse4.mm.bing.net/th?id=OIP.KEwJQvR80SIf-V10nKy9JgHaEK&pid=Api&P=0',
+        'https://tse3.mm.bing.net/th?id=OIP.vLy8rK_wxlUYESYUbBpo_wHaEK&pid=Api&P=0',
+        'https://tse4.mm.bing.net/th?id=OIP.L32Q3mMbsVu931uN1KmTgAHaEK&pid=Api&P=0',
+        'https://tse1.mm.bing.net/th?id=OIP.if2yG2TSxJfI5XlGxUgivQHaEK&pid=Api&P=0'
+      ]
+    };
   },
+  methods: {
+    changeImage() {
+      console.log('tap')
+    }
+  },
+  mounted() {
+    console.log(this.index);
+    // this.$watch(
+    //   () => this.index,
+    //   () => {
+    //     // this.changeImage();
+    //     console.log('ok ', this.index);
+    //   }
+    // )
+  }
 };
 </script>

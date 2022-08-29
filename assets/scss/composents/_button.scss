@@ -11,11 +11,10 @@
     font-size: 23px;
     @include saison_btn;
     @include center-element;
-    transition: all 0.3s ease-in;
+    transition: all 0.3s ease;
 
     &:hover {
-      color: $troisieme-couleur;
-      transform: scale(1.2);
+      transform: scale(1.3);
     }
   }
 }
