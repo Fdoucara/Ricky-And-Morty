@@ -1,8 +1,14 @@
 <template>
   <div class="saison">
-    <div class="saison_btn" >
-      <div class="saison_btn_item" v-for="(saison, index) in allEpTab" :key="index">
-        <h3 class="saison_btn_item_title" :id="index" @click="showIndex">Saison {{ index + 1 }}</h3>
+    <div class="saison_btn">
+      <div
+        class="saison_btn_item"
+        v-for="(saison, index) in allEpTab"
+        :key="index"
+      >
+        <h3 class="saison_btn_item_title" :id="index" @click="showIndex">
+          Saison {{ index + 1 }}
+        </h3>
       </div>
     </div>
 
@@ -31,6 +37,14 @@ export default {
       tabEpisodeS3: [],
       tabEpisodeS4: [],
       tabEpisodeS5: [],
+      element: null,
+      bcgColor: [
+        "linear-gradient(to right, #061700, #52c234)",
+        "linear-gradient(to right, #F37335, #FDC830)",
+        "linear-gradient(to right, #93291E, #ED213A)",
+        "linear-gradient(to right, #ad5389, #3c1053)",
+        "linear-gradient(to right, #0f0c29, #302b63, #24243e)",
+      ],
       id: 0,
     };
   },
@@ -66,11 +80,17 @@ export default {
     },
     showIndex(e) {
       this.id = e.target.id;
-      console.log(this.index);
-    }
+    },
   },
   mounted() {
-    this.allEpisodes();
-  }
+    this.$watch(
+      () => this.id,
+      () => {
+        this.element = document.querySelector("html");
+        this.element.style.background = this.bcgColor[this.id];
+      }
+    ),
+      this.allEpisodes();
+  },
 };
 </script>
