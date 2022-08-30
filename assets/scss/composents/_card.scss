@@ -1,40 +1,47 @@
-.container_episode_item_container_card {
-  position: relative;
-  width: 20%;
-  margin: 25px 35px;
-  border-radius: 15px;
-  border: 1px solid white;
-  box-shadow: -1px -1px 15px white;
-  transition: transform 0.3s ease-in;
+.container_episode {
+  @include center-element;
+  flex-wrap: wrap;
+  &_item {
+    &_card {
+        position: relative;
+        width: 70%;
+        margin: 25px 35px;
+        border-radius: 15px;
+        border: 1px solid white;
+        box-shadow: -1px -1px 15px white;
+        transition: transform 0.3s ease-in;
 
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-  }
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
 
-  &_image {
-    width: 100%;
+      &_image {
+        width: 100%;
 
-    img {
-      object-fit: contain;
-      border-radius: 15px 15px 0px 0px;
-      width: 100%;
-    }
-  }
+        img {
+          object-fit: contain;
+          border-radius: 15px 15px 0px 0px;
+          width: 100%;
+        }
+      }
 
-  &_body {
-    background-color: white;
-    padding: 20px;
-    border-radius: 0px 0px 15px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+      &_body {
+        background-color: white;
+        padding: 20px;
+        border-radius: 0px 0px 15px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-    p {
-      margin: 0;
-      font-family: $font-titre;
-      &:nth-child(2) {
-        color: $quatrieme-couleur;
+        p {
+          margin: 0;
+          font-family: $font-titre;
+
+          &:nth-child(2) {
+            color: $quatrieme-couleur;
+          }
+        }
       }
     }
   }

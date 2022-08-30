@@ -15,10 +15,10 @@
     <div class="container_episode">
       <div
         class="container_episode_item"
-        v-for="(saison, index) in allEpTab"
+        v-for="(episode, index) in allEpTab[id]"
         :key="index"
       >
-        <Episode :saison="saison" :index="id" />
+        <Episode :episode="episode" :index="id" />
       </div>
     </div>
   </div>

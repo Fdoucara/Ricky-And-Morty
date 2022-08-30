@@ -6,12 +6,6 @@
   color: white;
 }
 
-@mixin episode_container {
-  position: absolute;
-  font-family: $font-titre;
-  width: 100%;
-}
-
 @mixin center-element {
   display: flex;
   align-items: center;
@@ -22,12 +16,3 @@
   opacity: 0;
   visibility: hidden;
 }
-
-@mixin slide_photo {
-  z-index: 1;
-  @include center-element;
-  width: 70px;
-  height: auto;
-  margin: auto;
-}
-
