@@ -25,11 +25,6 @@ export default {
         "https://tse1.mm.bing.net/th?id=OIP.if2yG2TSxJfI5XlGxUgivQHaEK&pid=Api&P=0",
       ],
     };
-  },
-  methods: {
-    changeImage() {
-      console.log("tap");
-    },
   }
 };
 </script>

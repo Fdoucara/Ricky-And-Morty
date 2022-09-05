@@ -12,15 +12,17 @@
       </div>
     </div>
 
-    <div class="container_episode">
-      <div
-        class="container_episode_item"
-        v-for="(episode, index) in allEpTab[id]"
-        :key="index"
-      >
-        <Episode :episode="episode" :index="id" />
+    <!-- <transition name="slide"> -->
+      <div class="container_episode">
+        <div
+          class="container_episode_item"
+          v-for="(episode, index) in allEpTab[id]"
+          :key="index"
+        >
+          <Episode :episode="episode" :index="id" />
+        </div>
       </div>
-    </div>
+    <!-- </transition> -->
   </div>
 </template>
 
@@ -32,6 +34,7 @@ export default {
   data() {
     return {
       allEpTab: [],
+      allBtn: null,
       tabEpisodeS1: [],
       tabEpisodeS2: [],
       tabEpisodeS3: [],
@@ -46,6 +49,7 @@ export default {
         "linear-gradient(to right, #0f0c29, #302b63, #24243e)",
       ],
       id: 0,
+      display: false
     };
   },
   methods: {
@@ -80,7 +84,13 @@ export default {
     },
     showIndex(e) {
       this.id = e.target.id;
+      this.display = !this.display;
+      this.anim();
     },
+    anim() {
+      this.allBtn = gsap.utils.toArray(document.querySelectorAll(".saison_btn_item"));
+      console.log(this.allBtn);
+    }
   },
   mounted() {
     this.$watch(

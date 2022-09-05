@@ -1,15 +1,17 @@
 .container_episode {
   @include center-element;
   flex-wrap: wrap;
+
   &_item {
+    @include center-element;
     &_card {
-        position: relative;
-        width: 70%;
-        margin: 25px 35px;
-        border-radius: 15px;
-        border: 1px solid white;
-        box-shadow: -1px -1px 15px white;
-        transition: transform 0.3s ease-in;
+      position: relative;
+      width: 70%;
+      margin: 25px 35px;
+      border-radius: 15px;
+      border: 1px solid white;
+      box-shadow: -1px -1px 15px white;
+      transition: transform 0.3s ease-in;
 
       &:hover {
         cursor: pointer;
