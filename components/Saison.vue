@@ -12,17 +12,15 @@
       </div>
     </div>
 
-    <!-- <transition name="slide"> -->
-      <div class="container_episode">
+      <div class="saison_episode">
         <div
-          class="container_episode_item"
-          v-for="(episode, index) in allEpTab[id]"
+          class="saison_episode_container"
+          v-for="(saison, index) in allEpTab"
           :key="index"
         >
-          <Episode :episode="episode" :index="id" />
+          <Episode :saison="saison" :index="id" />
         </div>
       </div>
-    <!-- </transition> -->
   </div>
 </template>
 
@@ -34,7 +32,8 @@ export default {
   data() {
     return {
       allEpTab: [],
-      allBtn: null,
+      epInSaison: null,
+      theSaison: null,
       tabEpisodeS1: [],
       tabEpisodeS2: [],
       tabEpisodeS3: [],
@@ -85,11 +84,17 @@ export default {
     showIndex(e) {
       this.id = e.target.id;
       this.display = !this.display;
-      this.anim();
+      // this.anim();
     },
     anim() {
-      this.allBtn = gsap.utils.toArray(document.querySelectorAll(".saison_btn_item"));
-      console.log(this.allBtn);
+      this.theSaison = gsap.utils.toArray(document.querySelectorAll(".container_episode"));
+      this.epInSaison = gsap.utils.toArray(document.querySelectorAll(".container_episode_item"));
+      
+      const tl = gsap.timeline();
+
+      tl
+        .to(this.theSaison, { x: 0, width: '100%', duration: 1})
+ 0
     }
   },
   mounted() {

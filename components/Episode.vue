@@ -1,12 +1,18 @@
 <template>
-  <div class="container_episode_item_card">
-    <div class="container_episode_item_card_image">
-      <img :src="card_image[index]" alt="Rick et Morty" />
-    </div>
+  <div class="saison_episode_container_item">
+    <div
+      class="saison_episode_container_item_card"
+      v-for="(episode, index) in saison"
+      :key="index"
+    >
+      <div class="saison_episode_container_item_card_image">
+        <img :src="card_image[2]" alt="Rick et Morty" />
+      </div>
 
-    <div class="container_episode_item_card_body">
-      <p>{{ episode.episode }}</p>
-      <p>{{ episode.air_date }}</p>
+      <div class="saison_episode_container_item_card_body">
+        <p>{{ episode.episode }}</p>
+        <p>{{ episode.air_date }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -14,7 +20,7 @@
 <script>
 export default {
   name: "Episode",
-  props: ["episode", "index"],
+  props: ["saison", "index"],
   data() {
     return {
       card_image: [
@@ -25,6 +31,6 @@ export default {
         "https://tse1.mm.bing.net/th?id=OIP.if2yG2TSxJfI5XlGxUgivQHaEK&pid=Api&P=0",
       ],
     };
-  }
+  },
 };
 </script>

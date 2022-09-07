@@ -1,47 +1,53 @@
-.container_episode {
+.saison_episode {
   @include center-element;
   flex-wrap: wrap;
 
-  &_item {
+  &_container {
     @include center-element;
-    &_card {
-      position: relative;
-      width: 70%;
-      margin: 25px 35px;
-      border-radius: 15px;
-      border: 1px solid white;
-      box-shadow: -1px -1px 15px white;
-      transition: transform 0.3s ease-in;
 
-      &:hover {
-        cursor: pointer;
-        transform: scale(1.1);
-      }
+    &_item {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
 
-      &_image {
-        width: 100%;
+      &_card {
+        width: 25%;
+        margin: 25px 35px;
+        border-radius: 15px;
+        border: 1px solid white;
+        box-shadow: -1px -1px 15px white;
+        transition: transform 0.3s ease-in;
 
-        img {
-          object-fit: contain;
-          border-radius: 15px 15px 0px 0px;
-          width: 100%;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1);
         }
-      }
 
-      &_body {
-        background-color: white;
-        padding: 20px;
-        border-radius: 0px 0px 15px 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        &_image {
+          width: 100%;
 
-        p {
-          margin: 0;
-          font-family: $font-titre;
+          img {
+            object-fit: contain;
+            border-radius: 15px 15px 0px 0px;
+            width: 100%;
+          }
+        }
 
-          &:nth-child(2) {
-            color: $quatrieme-couleur;
+        &_body {
+          background-color: white;
+          padding: 20px;
+          border-radius: 0px 0px 15px 15px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          p {
+            margin: 0;
+            font-family: $font-titre;
+
+            &:nth-child(2) {
+              color: $quatrieme-couleur;
+            }
           }
         }
       }
