@@ -6,7 +6,7 @@
       :key="index"
     >
       <div class="saison_episode_container_item_card_image">
-        <img :src="card_image[2]" alt="Rick et Morty" />
+        <img :src="card_image[id]" alt="Rick et Morty"/>
       </div>
 
       <div class="saison_episode_container_item_card_body">
@@ -30,7 +30,16 @@ export default {
         "https://tse4.mm.bing.net/th?id=OIP.L32Q3mMbsVu931uN1KmTgAHaEK&pid=Api&P=0",
         "https://tse1.mm.bing.net/th?id=OIP.if2yG2TSxJfI5XlGxUgivQHaEK&pid=Api&P=0",
       ],
+      id: this.index
     };
   },
+  mounted () {
+    this.$watch (
+      () => this.index,
+      () => {
+        this.id = this.index;
+      }
+    );
+  }
 };
 </script>
