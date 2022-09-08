@@ -33,7 +33,6 @@ export default {
     return {
       allEpTab: [],
       epInSaison: null,
-      theSaison: null,
       tabEpisodeS1: [],
       tabEpisodeS2: [],
       tabEpisodeS3: [],
@@ -48,7 +47,7 @@ export default {
         "linear-gradient(to right, #0f0c29, #302b63, #24243e)",
       ],
       id: 0,
-      display: false
+      oldId: 0
     };
   },
   methods: {
@@ -83,18 +82,31 @@ export default {
     },
     showIndex(e) {
       this.id = e.target.id;
-      this.display = !this.display;
-      // this.anim();
+      console.log('Id ', this.id, 'old Id ', this.oldId);
+      this.anim();
+      this.oldId = this.id;
+      console.log('Id ', this.id, 'old Id ', this.oldId);
     },
     anim() {
-      this.theSaison = gsap.utils.toArray(document.querySelectorAll(".container_episode"));
-      this.epInSaison = gsap.utils.toArray(document.querySelectorAll(".container_episode_item"));
+      this.epInSaison = gsap.utils.toArray(document.querySelectorAll(".saison_episode_container"));
       
       const tl = gsap.timeline();
 
-      tl
-        .to(this.theSaison, { x: 0, width: '100%', duration: 1})
- 0
+      if(this.id == this.oldId) {
+        tl
+        .to(this.epInSaison[this.id], { 
+          keyframes: [ 
+            { x: "-5", duration: "0.1", rotate: "-2" },
+            { x: "5", duration: "0.1", rotate: "2" },
+            { x: "-5", duration: "0.1", rotate: "-2" },
+            { x: "0", duration: "0.1", rotate: "0" }
+         ]
+        })
+      } else {
+        tl
+        .fromTo(this.epInSaison[this.oldId], {autoAlpha: 1, scale: '1.1'}, { autoAlpha: 0, scale: 0.6 })
+        .to(this.epInSaison[this.id], { autoAlpha: 1, scale: '1', duration: 0.7 })
+      }
     }
   },
   mounted() {

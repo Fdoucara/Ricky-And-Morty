@@ -1,9 +1,19 @@
 .saison_episode {
+  position: relative;
   @include center-element;
   flex-wrap: wrap;
 
   &_container {
     @include center-element;
+    margin-bottom: 30px;
+
+    &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+      position: absolute;
+      transform: scale(0.6);
+      top: 0;
+      opacity: 0;
+      visibility: hidden;
+    }
 
     &_item {
       display: flex;
