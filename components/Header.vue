@@ -6,6 +6,10 @@
       </video>
     </div>
     <div class="overlay"></div>
+    <img class="header_image" src="../assets/images/rick-and-morty-31015.png" alt="Rick and morty">
+    <div class="header_button"> 
+      <p> Let's Go </p>
+    </div>
   </header>
 </template>
 <script>

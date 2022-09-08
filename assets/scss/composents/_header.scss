@@ -13,4 +13,29 @@
       object-fit: cover;
     }
   }
+  &_image {
+    position: absolute;
+    z-index: 2;
+    top: 10%;
+    transform: translateX(50%);
+    width: 50%;
+  }
+  &_button {
+    position: absolute;
+    z-index: 2;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+    background-color: $troisieme-couleur;
+    border-radius: 30px;
+    text-align: center;
+    p {
+      font-size: 35px;
+      font-family: $font-titre;
+      color: white;
+      padding: 15px 0px;
+      margin: 0;
+    }
+  }
 }
