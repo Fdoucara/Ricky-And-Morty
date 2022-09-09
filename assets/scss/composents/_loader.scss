@@ -5,7 +5,7 @@
   z-index: 5;
   background-color: rgb(0, 0, 0);
   @include center-element;
-  animation: rotate-loader 0.5s 3s forwards;
+  animation: rotate-loader 0.5s 2.5s forwards;
   &_container {
     @include center-element;
     width: 40%;
