@@ -1,0 +1,19 @@
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-color: rgb(0, 0, 0);
+  @include center-element;
+  animation: rotate-loader 0.5s 3s forwards;
+  &_container {
+    @include center-element;
+    width: 40%;
+    margin: auto;
+    &_image {
+      &_item {
+        width: 100%;
+      }
+    }
+  }
+}

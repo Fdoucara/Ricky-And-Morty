@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Loader />
     <Header />
     <Saison />
   </div>
@@ -7,8 +8,9 @@
 
 <script>
 import Header from "../components/Header.vue";
+import Loader from "../components/Loader.vue";
 export default {
   name: "IndexPage",
-  components: { Header },
+  components: { Header, Loader },
 };
 </script>
