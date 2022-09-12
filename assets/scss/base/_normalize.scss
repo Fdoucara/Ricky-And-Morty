@@ -14,8 +14,9 @@ html {
   -webkit-text-size-adjust: 100%;
   /* 2 */
   height: 100%;
-  overflow-x: hidden;
-  background: linear-gradient(to right, #061700, #52c234);
+  // overflow-x: hidden;
+  background: $header-button-couleur;
+  // background: linear-gradient(to right, #061700, #52c234);
   // background: linear-gradient(to right, #F37335, #FDC830);
   // background: linear-gradient(to right, #93291E, #ED213A);
   // background: linear-gradient(to right, #ad5389, #3c1053);

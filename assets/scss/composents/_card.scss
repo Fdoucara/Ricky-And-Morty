@@ -1,13 +1,14 @@
 .saison_episode {
   position: relative;
   @include center-element;
-  flex-wrap: wrap;
 
   &_container {
     @include center-element;
-    margin-bottom: 30px;
 
-    &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5) {
       position: absolute;
       transform: scale(0.6);
       top: 0;
@@ -16,47 +17,66 @@
     }
 
     &_item {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      // display: flex;
+      // justify-content: center;
+      // flex-wrap: wrap;
+      width: 100%;
+      padding: 30px 0px;
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 30%;
+
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scroll-snap-type: x mandatory;
+      // scroll-padding-inline: 1%;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       &_card {
-        width: 25%;
-        margin: 25px 35px;
-        border-radius: 15px;
-        border: 1px solid white;
-        box-shadow: -1px -1px 15px white;
+        width: 93%;
+        margin: auto;
+        // margin: 25px 35px;
+        // border-radius: 15px;
+        scroll-snap-align: center;
+        box-shadow: -1px -1px 15px $troisieme-couleur;
         transition: transform 0.3s ease-in;
 
         &:hover {
           cursor: pointer;
-          transform: scale(1.1);
-        }
-
-        &_image {
-          width: 100%;
-
-          img {
-            object-fit: contain;
-            border-radius: 15px 15px 0px 0px;
-            width: 100%;
-          }
+          transform: scale(1.05);
         }
 
         &_body {
-          background-color: white;
-          padding: 20px;
-          border-radius: 0px 0px 15px 15px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          width: 100%;
 
-          p {
-            margin: 0;
-            font-family: $font-titre;
+          &_image {
+            width: 100%;
 
-            &:nth-child(2) {
-              color: $quatrieme-couleur;
+            img {
+              object-fit: contain;
+              // border-radius: 15px 15px 0px 0px;
+              width: 100%;
+            }
+          }
+
+          &_contain {
+            background-color: white;
+            padding: 20px;
+            // border-radius: 0px 0px 15px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            p {
+              margin: 0;
+              font-family: $font-titre;
+
+              &:nth-child(2) {
+                color: $quatrieme-couleur;
+              }
             }
           }
         }

@@ -38,13 +38,6 @@ export default {
       tabEpisodeS3: [],
       tabEpisodeS4: [],
       tabEpisodeS5: [],
-      bcgColor: [
-        "linear-gradient(to right, #061700, #52c234)",
-        "linear-gradient(to right, #F37335, #FDC830)",
-        "linear-gradient(to right, #93291E, #ED213A)",
-        "linear-gradient(to right, #ad5389, #3c1053)",
-        "linear-gradient(to right, #0f0c29, #302b63, #24243e)",
-      ],
       id: 0,
       oldId: 0
     };
@@ -108,13 +101,6 @@ export default {
     }
   },
   mounted() {
-    this.$watch(
-      () => this.id,
-      () => {
-        this.element = document.querySelector("html");
-        this.element.style.background = this.bcgColor[this.id];
-      }
-    ),
     this.allEpisodes();
   },
 };
