@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="saison_episode_focus_container">
     
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
     getEpInfo() {
       this.$axios.$get("episode/" + this.id)
         .then((reponse) => {
-          console.log(reponse);
+          // console.log(reponse);
         })
     }
   },
