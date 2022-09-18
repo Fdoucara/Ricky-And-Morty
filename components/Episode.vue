@@ -26,6 +26,7 @@
       </div>
     </div>
     <div class="saison_episode_focus_container">
+      <h2 class="saison_episode_focus_container_title"> Episode Actuel </h2>
       <OneEpisode v-if="epId && card_image[id]" :id="epId" :card_image="card_image[id]"/>
     </div>
   </div>
