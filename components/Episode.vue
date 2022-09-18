@@ -25,8 +25,8 @@
         </div>
       </div>
     </div>
-    <div class="saison_episode_focus">
-      <OneEpisode :id="epId" />
+    <div class="saison_episode_focus_container">
+      <OneEpisode v-if="epId && card_image[id]" :id="epId" :card_image="card_image[id]"/>
     </div>
   </div>
 </template>
@@ -47,18 +47,19 @@ export default {
       ],
       id: this.index,
       epId: 1,
+      activeItem: null,
+      allItems: null
     };
   },
   methods: {
     showIndex(e) {
       this.epId = e.target.parentNode.id;
-      let activeItem = this.epId - 1;
-      let allItems = Array.from($('.saison_episode_container_item_card'));
+      this.activeItem = this.epId - 1;
+      this.allItems = Array.from($('.saison_episode_container_item_card'));
 
-      // Utilisation du jquery pour scale l'element sur lequel on est focus 
-      
-      $(allItems[activeItem]).on('click', () => {
-        $(allItems[activeItem]).addClass('scale').siblings().removeClass('scale');
+      // Utilisation du jquery pour scale l'element sur lequel on est focus     
+      $(this.allItems[this.activeItem]).on('click', () => {
+        $(this.allItems[this.activeItem]).addClass('scale').siblings().removeClass('scale');
       })
     },
   },

@@ -94,7 +94,6 @@ export default {
         })
       } else {
         tl
-        // .fromTo(this.epInSaison[this.oldId], {autoAlpha: 1, scale: '1.1'}, { autoAlpha: 0, scale: 0.6 })
         .to(this.epInSaison[this.oldId], { autoAlpha: 0, scale: '0.6', duration: 0.1 })
         .to(this.epInSaison[this.id], { autoAlpha: 1, scale: '1', duration: 0.7 })
       }

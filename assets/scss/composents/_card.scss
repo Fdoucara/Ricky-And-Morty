@@ -77,6 +77,37 @@
       }
     }
   }
+  &_focus_container {
+    @include center-element;
+    // justify-content: start;
+
+    &_card {
+
+      width: 30%;
+      // margin: auto;
+      background-color: white;
+      scroll-snap-align: center;
+      box-shadow: -1px -1px 15px $troisieme-couleur;
+      transition: all 0.3s ease-in;
+
+      &_image {
+        object-fit: contain;
+        width: 100%;
+      }
+
+      &_contain {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          margin: 0;
+          font-family: $font-titre;
+        }
+      }
+    }
+  }
 }
 
 .scale {
