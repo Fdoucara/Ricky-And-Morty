@@ -14,7 +14,7 @@
           alt="Rick et Morty"
           @click="showIndex"
         />
-
+        
         <div
           class="saison_episode_container_item_card_contain"
           :id="episode.id"
@@ -25,8 +25,8 @@
         </div>
       </div>
     </div>
-    <div class="saison_episode_focus_container">
-      <h2 class="saison_episode_focus_container_title"> Episode Actuel </h2>
+    <div class="saison_episode_focus">
+      <h2 class="saison_episode_focus_title"> Episode Actuel </h2>
       <OneEpisode v-if="epId && card_image[id]" :id="epId" :card_image="card_image[id]"/>
     </div>
   </div>

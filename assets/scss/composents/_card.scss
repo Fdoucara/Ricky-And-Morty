@@ -17,19 +17,14 @@
     }
 
     &_item {
-      // display: flex;
-      // justify-content: center;
-      // flex-wrap: wrap;
       width: 100%;
       padding: 30px 0px;
       display: grid;
       grid-auto-flow: column;
       grid-auto-columns: 30%;
-
       overflow-x: auto;
       overscroll-behavior-inline: contain;
       scroll-snap-type: x mandatory;
-      // scroll-padding-inline: 1%;
 
       &::-webkit-scrollbar {
         display: none;
@@ -38,8 +33,6 @@
       &_card {
         width: 93%;
         margin: auto;
-        // margin: 25px 35px;
-        // border-radius: 15px;
         background-color: white;
         scroll-snap-align: center;
         box-shadow: -1px -1px 15px $troisieme-couleur;
@@ -47,24 +40,19 @@
 
         &:hover {
           cursor: pointer;
-          // transform: scale(1.05);
         }
-
 
         &_image {
           width: 100%;
 
           img {
             object-fit: contain;
-            // border-radius: 15px 15px 0px 0px;
             width: 100%;
           }
         }
 
         &_contain {
-          // background-color: white;
           padding: 20px;
-          // border-radius: 0px 0px 15px 15px;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -77,40 +65,73 @@
       }
     }
   }
-  &_focus_container {
+
+  &_focus {
     margin-left: 20px;
 
     &_title {
       font-family: $font-titre;
     }
 
-    &_card {
-      position: relative;
-      @include center-element;
-      width: 30%;
-      // box-shadow: -1px -1px 15px $troisieme-couleur;
-      transition: all 0.3s ease-in;
-
-      &_image {
-        object-fit: contain;
-        width: 100%;
-      }
-
-      &_contain {
-        position: absolute;
-        width: 100%;
-        height: 100%;
+    &_container {
+      width: 100%;
+      margin: auto;
+      margin-top: 40px;
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 50%;
+      
+      &_card {
+        position: relative;
         @include center-element;
-        flex-direction: column;
-        background-color: rgb(0, 0, 0, 0.8);
-        z-index: 2;
+        width: 100%;
+        transition: all 0.2s ease-in;
 
-        p {
-          margin: 0;
-          font-family: $font-titre;
+        &_image {
+          object-fit: contain;
+          width: 100%;
+        }
+
+        &_contain {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          @include center-element;
+          flex-direction: column;
+          background-color: rgb(0, 0, 0, 0.7);
+          z-index: 2;
+
+          p {
+            margin: 0;
+            font-family: $font-titre;
+            font-size: 25px;
+            color: white;
+            line-height: 45px;
+          }
+        }
+      }
+      &_button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &_item {
+          width: 60%;
+          margin: 20px 0px;
+          border: 3px solid $troisieme-couleur;
+          border-radius: 15px;
           font-size: 25px;
-          color: white;
-          line-height: 35px;
+          font-family: $font-titre;
+          transition: all 0.3s ease-in;
+          p {
+            text-align: center;
+            margin: 0px;
+            padding: 20px 30px;
+          }
+          &:hover {
+            cursor: pointer;
+            background-color: $header-button-couleur;
+          }
         }
       }
     }

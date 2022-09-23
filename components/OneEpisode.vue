@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="saison_episode_focus_container">
     <div class="saison_episode_focus_container_card">
       <img
         class="saison_episode_focus_container_card_image"
@@ -8,14 +8,21 @@
       />
 
       <div class="saison_episode_focus_container_card_contain">
-        <p>{{ epNum }}</p>
-        <p>{{ epDate }}</p>
         <p>{{ epName }}</p>
+        <p>{{ epDate }}</p>
       </div>
     </div>
 
-    <div class="saison_episode_focus_container_distribution">
-      <h2 class="saison_episode_focus_container_title"> Distribution </h2>
+    <div class="saison_episode_focus_container_button">
+      <div class="saison_episode_focus_container_button_item">
+        <p> Lecture épisode {{ epNum }} </p>
+      </div>
+      <div class="saison_episode_focus_container_button_item">
+        <p> Liste de favoris </p>
+      </div>
+      <div class="saison_episode_focus_container_button_item">
+        <p> Télécharger l'épisode </p>
+      </div>
     </div>
   </div>
 </template>
