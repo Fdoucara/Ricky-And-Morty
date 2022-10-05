@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <h2 class="saison_episode_focus_characters_title"> Personnages dans l'episode </h2>
+    <h2 class="saison_episode_focus_characters_title"> Distribution </h2>
     <Distribution :epPerso="epPerso" />
   </div>
 </template>

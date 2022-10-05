@@ -12,10 +12,9 @@
         alt="Photo personnage"
       />
 
-      <!-- <div class="saison_episode_focus_characters_card_contain" :id="perso.id">
+      <div class="saison_episode_focus_characters_card_contain" :id="perso.id">
         <p>{{ perso.name }}</p>
-        <p>{{ perso.species }}</p>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
