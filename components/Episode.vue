@@ -20,8 +20,7 @@
           :id="episode.id"
           @click="showIndex"
         >
-          <p @click="showIndex">{{ episode.episode }}</p>
-          <p @click="showIndex">{{ episode.air_date }}</p>
+          <p @click="showIndex">{{ episode.name }}</p>
         </div>
       </div>
     </div>

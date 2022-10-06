@@ -52,13 +52,12 @@
         }
 
         &_contain {
-          padding: 20px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          padding: 10px 5px;
 
           p {
+            text-align: center;
             margin: 0;
+            font-size: 15px;
             font-family: $font-titre;
           }
         }
