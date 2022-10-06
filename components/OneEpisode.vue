@@ -59,7 +59,6 @@ export default {
               this.epPerso.push(reponse);
             });
           }
-          console.log(this.epPerso);
         });
     },
   },

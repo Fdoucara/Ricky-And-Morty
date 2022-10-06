@@ -5,8 +5,7 @@
       <img src="../assets/images/rickMorty.png" class="footer_image_img2">
     </div>
     <div class="footer_contain">
-      <p> Fodié DOUCARA - 2022 <fa-icons class="fab fa-github"/> </p>
-      <i class="fab fa-github"></i>
+      <p> Fodié DOUCARA - 2022 </p>
     </div>
   </div>
 </template>
