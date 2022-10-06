@@ -3,5 +3,34 @@
   width: 100%;
   height: 180px;
   background-color: black;
-  @include center-element;
+  // @include center-element;
+  &_image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0%;
+    &_img1, &_img2 {
+      position: absolute;
+      bottom: 0%;
+      z-index: 5;
+    }
+    &_img1 {
+      width: 10%;
+      right: 10%;
+    }
+    &_img2 {
+      width: 20%;
+      left: 10%;
+    }
+  }
+
+  &_contain {
+    width: 100%;
+    height: 100%;
+    @include center-element;
+    p {
+      font-family: $font-titre;
+      color: white;
+    }
+  }
 }
