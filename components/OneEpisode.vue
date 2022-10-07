@@ -27,6 +27,15 @@
       </div>
     </div>
 
+    <div class="saison_episode_focus_container_description">
+      <h2> </h2>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. At dignissimos, natus ipsa, neque incidunt omnis, minima temporibus pariatur esse quis blanditiis laudantium eligendi quas aperiam labore tempora quo a corrupti?
+        Repellat quisquam beatae in laborum odit quo ad vitae molestias qui sunt harum exercitationem fuga labore nostrum tenetur natus, minus perspiciatis! Quam, accusamus voluptatibus tempore est illum odio minus illo.
+        Minus ipsa, maiores possimus reprehenderit praesentium maxime dolorem exercitationem facilis voluptatibus sit aliquid consectetur repellendus voluptatem quisquam, esse eum eligendi necessitatibus ipsum labore eaque, laudantium quia sed pariatur. Rerum, illo?
+      </p>
+    </div>
+
     <h2 class="saison_episode_focus_characters_title"> Distribution </h2>
     <Distribution :epPerso="epPerso" />
   </div>
